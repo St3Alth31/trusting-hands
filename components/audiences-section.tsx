@@ -90,6 +90,8 @@ export function AudiencesSection() {
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    aria-controls={`accordion-content-${activeTab}-${i}`}
                     className="w-full flex items-center justify-between py-5 text-left focus:outline-none"
                   >
                     <span className="font-sans text-sm font-medium text-[--foreground] hover:text-[--accent-green] transition-colors duration-300">
@@ -102,6 +104,7 @@ export function AudiencesSection() {
                     />
                   </button>
                   <div
+                    id={`accordion-content-${activeTab}-${i}`}
                     className={`grid transition-all duration-300 ease-out ${
                       isOpen ? "grid-rows-[1fr] opacity-100 mb-5" : "grid-rows-[0fr] opacity-0"
                     }`}

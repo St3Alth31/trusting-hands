@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -42,11 +43,14 @@ export function Hero() {
     <section ref={container} className="relative h-screen flex flex-col justify-end overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-[--background]">
-        <img
+        <Image
           ref={bgRef}
           src="/images/image-1.jpg"
           alt="Trusting Hands Domestic Workers"
-          className="w-full h-[130%] object-cover -top-[15%] relative"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover -top-[15%] !h-[130%]"
         />
         <div
           aria-hidden="true"

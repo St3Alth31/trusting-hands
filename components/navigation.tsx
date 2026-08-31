@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { contact } from "@/lib/contact"
 
@@ -43,18 +44,24 @@ export function Navigation() {
           aria-label="Trusting Hands home"
         >
           {/* White logo — shown on transparent/dark hero nav */}
-          <img
+          <Image
             src="/images/group-2-1.png"
             alt="Trusting Hands white logo"
-            className={`absolute inset-0 h-[63px] w-auto max-w-[28rem] object-contain object-left transition-opacity duration-500 ${
+            fill
+            priority
+            sizes="448px"
+            className={`object-contain object-left transition-opacity duration-500 ${
               scrolled ? "opacity-0" : "opacity-100"
             }`}
           />
           {/* Color logo — shown when nav turns white on scroll */}
-          <img
+          <Image
             src="/images/group-2.png"
             alt="Trusting Hands color logo"
-            className={`absolute inset-0 h-[63px] w-auto max-w-[28rem] object-contain object-left transition-opacity duration-500 ${
+            fill
+            priority
+            sizes="448px"
+            className={`object-contain object-left transition-opacity duration-500 ${
               scrolled ? "opacity-100" : "opacity-0"
             }`}
           />
